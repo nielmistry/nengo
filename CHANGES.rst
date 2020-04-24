@@ -87,6 +87,11 @@ Release history
   attribute. (`#1611`_)
 - The ``encoders`` and ``eval_points`` of ``Ensemble`` are now sampled from
   ``ScatteredHypersphere`` by default. (`#1611`_)
+- ``LinearFilter`` now accepts system descriptions in state-space (``(A, B, C, D)``) or
+  zero-pole-gain (``(z, p, k)``) form, in addition to transfer function (``(num, den)``)
+  form. If passing systems in transfer function form, they should be passed as a
+  ``(numerator, denominator)`` tuple; the separate ``den`` argument is deprecated.
+  (`#1611`_)
 
 **Deprecated**
 
