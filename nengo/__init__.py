@@ -40,6 +40,7 @@ from nengo.base import Process
 from nengo.config import Config
 from nengo.connection import Connection
 from nengo.ensemble import Ensemble
+from nengo.linear_system import LinearSystem
 from nengo.node import Node
 from nengo.neurons import (
     AdaptiveLIF,

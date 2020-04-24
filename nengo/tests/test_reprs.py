@@ -6,20 +6,20 @@ import pytest
 
 import nengo
 from nengo import (
+    BCM,
+    LIF,
+    PES,
     AdaptiveLIF,
     AdaptiveLIFRate,
     Alpha,
-    BCM,
     Convolution,
     Dense,
     Direct,
     Izhikevich,
-    LIF,
     LIFRate,
     LinearFilter,
     Lowpass,
     Oja,
-    PES,
     RectifiedLinear,
     RLS,
     Sigmoid,
@@ -41,11 +41,11 @@ from nengo.builder.operator import (
 from nengo.builder.processes import SimProcess
 from nengo.builder.signal import Signal
 from nengo.dists import (
+    PDF,
     Choice,
     CosineSimilarity,
     Exponential,
     Gaussian,
-    PDF,
     Samples,
     ScatteredHypersphere,
     SqrtBeta,
@@ -53,6 +53,7 @@ from nengo.dists import (
     Uniform,
     UniformHypersphere,
 )
+from nengo.linear_system import LinearSystem
 from nengo.processes import (
     BrownNoise,
     FilteredNoise,
@@ -438,6 +439,16 @@ def test_synapses():
     check_init_args(Triangle, ["t"])
     check_repr(Triangle(0.3))
     assert repr(Triangle(0.03)) == "Triangle(t=0.03)"
+
+
+def test_linear_system():
+    check_init_args(LinearSystem, ["sys", "analog", "method", "x0", "default_dt"])
+    check_repr(LinearSystem(([1], [0.3, 1])))
+    check_repr(LinearSystem(([1], [0.3, 1]), x0=[0.2]))
+    check_repr(LinearSystem(([0.1], [-0.5, -0.7], [1.2])))
+    check_repr(LinearSystem(([-0.1], [0.1], [1.3], [0.1])))
+    check_repr(LinearSystem(([0.1], [0.1], [1.3], [0.1]), analog=False))
+    check_repr(LinearSystem(([0.1], [0.1], [1.3], [0.1]), method="zoh"))
 
 
 def test_processes():

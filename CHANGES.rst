@@ -53,6 +53,8 @@ Release history
   version of the least-squares method typically used for offline decoder-solving.
   It is demonstrated in the new ``learning/force-learning.ipynb`` notebook.
   (`#1611`_, `example <force-learning>`_)
+- Added ``LinearSystem``, a ``Process`` to implement arbitrary linear systems.
+  (`#1611`_)
 
 **Changed**
 
