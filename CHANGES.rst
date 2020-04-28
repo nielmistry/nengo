@@ -55,6 +55,8 @@ Release history
   (`#1611`_, `example <force-learning>`_)
 - Added ``LinearSystem``, a ``Process`` to implement arbitrary linear systems.
   (`#1611`_)
+- Added ``DoubleExp``, ``Bandpass``, ``Highpass``, ``DiscreteDelay``, and
+  ``LegendreDelay`` synapse models. (`#1611`_)
 
 **Changed**
 
