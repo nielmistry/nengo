@@ -46,6 +46,9 @@ Release history
   as are commonly used to match biological spiking statistics. (`#1609`_)
 - Added the ``PositiveNeuronType`` test argument to run tests on all neuron types
   for which ``negative`` is not ``True``. (`#1609`_)
+- Added the ``ScatteredHypersphere`` distribution, which is similar to
+  ``UniformHypersphere`` but generates points that are more evenly spread across
+  the space. (`#1611`_)
 
 **Changed**
 
