@@ -49,6 +49,10 @@ Release history
 - Added the ``ScatteredHypersphere`` distribution, which is similar to
   ``UniformHypersphere`` but generates points that are more evenly spread across
   the space. (`#1611`_)
+- Added the ``RLS`` (recursive least-squares) learning rule, which is an online
+  version of the least-squares method typically used for offline decoder-solving.
+  It is demonstrated in the new ``learning/force-learning.ipynb`` notebook.
+  (`#1611`_, `example <force-learning>`_)
 
 **Changed**
 
@@ -121,6 +125,7 @@ Release history
 .. _#1629: https://github.com/nengo/nengo/pull/1629
 .. _#1630: https://github.com/nengo/nengo/pull/1630
 .. _#1640: https://github.com/nengo/nengo/pull/1640
+.. _force-learning: https://www.nengo.ai/nengo/examples/learning/force-learning.html
 
 3.0.0 (November 18, 2019)
 =========================
