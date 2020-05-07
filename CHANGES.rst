@@ -79,6 +79,8 @@ Release history
 - Various improvements to simulation speed. (`#1629`_)
 - ``EnsembleArray`` now returns an error if ``add_output`` would overwrite an existing
   attribute. (`#1611`_)
+- The ``encoders`` and ``eval_points`` of ``Ensemble`` are now sampled from
+  ``ScatteredHypersphere`` by default. (`#1611`_)
 
 **Deprecated**
 
