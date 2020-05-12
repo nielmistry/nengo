@@ -4,13 +4,8 @@ import numpy as np
 
 from nengo.base import Process
 from nengo.exceptions import ValidationError
-from nengo.params import (
-    IntParam,
-    NumberParam,
-    Parameter,
-    Unconfigurable,
-)
 from nengo.linear_system import LinearSystem
+from nengo.params import IntParam, NumberParam, Parameter, Unconfigurable
 from nengo.rc import rc
 from nengo.utils.numpy import as_shape, is_number
 
@@ -895,3 +890,12 @@ class SynapseParam(Parameter):
         synapse = Lowpass(synapse) if is_number(synapse) else synapse
         self.check_type(instance, synapse, Synapse)
         return super().coerce(instance, synapse)
+
+
+class LinearFilterParam(SynapseParam):
+    equatable = True
+
+    def coerce(self, instance, synapse):
+        synapse = super().coerce(instance, synapse)
+        self.check_type(instance, synapse, LinearFilter)
+        return synapse
